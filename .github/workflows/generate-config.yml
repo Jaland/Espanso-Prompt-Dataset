@@ -43,8 +43,10 @@ jobs:
       id: check-changes
       run: |
         if git diff --quiet main-base.yaml; then
+          echo "No changes to main-base.yaml"
           echo "changed=false" >> $GITHUB_OUTPUT
         else
+          echo "Changes to main-base.yaml"
           echo "changed=true" >> $GITHUB_OUTPUT
         fi
         
