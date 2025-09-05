@@ -67,3 +67,6 @@ matches:
 
   - trigger: "recieve"
     replace: "receive"
+
+  - trigger: "gti"
+    replace: "git"
