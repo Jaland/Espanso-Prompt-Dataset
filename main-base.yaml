@@ -11,12 +11,30 @@
 # - prompts/text-expansion/abbreviations.yaml
 
 matches:
+- trigger: :ai-rhocp
+  replace: |-
+    # Red Hat Openshift Question
+    * **Goal**: [Help me understand these logs]
+    * **Version:** e.g., OCP 4.14 on AWS IPI.
+    * **Problem:** What's happening vs. what you expect? Include any error messages.
+    * **Base Domain:** [apps.rosa.jland.guid.ab.openshiftapps.com]
+
+    ```yaml
+    # Paste relevant YAML here
+    ```
 - trigger: :pydef
-  replace: "def {{name}}({{args}}):\n    \"\"\"{{description}}\"\"\"\n    {{body}}\n\
-    \    return {{return_value}}\n"
+  replace: |
+    def {{name}}({{args}}):
+        """{{description}}"""
+        {{body}}
+        return {{return_value}}
 - trigger: :jsfunction
-  replace: "function {{name}}({{args}}) {\n    // {{description}}\n    {{body}}\n\
-    \    return {{return_value}};\n}\n"
+  replace: |
+    function {{name}}({{args}}) {
+        // {{description}}
+        {{body}}
+        return {{return_value}};
+    }
 - trigger: :gitfix
   replace: 'fix: {{description}}'
 - trigger: :gitfeat
@@ -24,9 +42,15 @@ matches:
 - trigger: :gitdocs
   replace: 'docs: {{description}}'
 - trigger: :tryexcept
-  replace: "try:\n    {{code}}\nexcept {{exception}} as e:\n    {{error_handling}}\n"
+  replace: |
+    try:
+        {{code}}
+    except {{exception}} as e:
+        {{error_handling}}
 - trigger: :ifmain
-  replace: "if __name__ == \"__main__\":\n    {{main_code}}\n"
+  replace: |
+    if __name__ == "__main__":
+        {{main_code}}
 - trigger: :today
   replace: '{{mydate}}'
   vars:
@@ -55,97 +79,64 @@ matches:
 - trigger: :sincerely
   replace: Sincerely yours,
 - trigger: :emailmeet
-  replace: 'Hi {{name}},
+  replace: |
+    Hi {{name}},
 
+    I hope this email finds you well. I'd like to schedule a meeting to discuss {{topic}}.
 
-    I hope this email finds you well. I''d like to schedule a meeting to discuss {{topic}}.
-
-
-    Would you be available for a {{duration}} meeting sometime {{timeframe}}? Please
-    let me know what works best for your schedule.
-
+    Would you be available for a {{duration}} meeting sometime {{timeframe}}? Please let me know what works best for your schedule.
 
     Best regards,
-
     {{your_name}}
-
-    '
 - trigger: :emailfollow
-  replace: 'Hi {{name}},
-
+  replace: |
+    Hi {{name}},
 
     I wanted to follow up on our previous conversation about {{topic}}.
 
-
     {{follow_up_details}}
 
-
-    Please let me know if you have any questions or if there''s anything else I can
-    help with.
-
+    Please let me know if you have any questions or if there's anything else I can help with.
 
     Best regards,
-
     {{your_name}}
-
-    '
 - trigger: :emailthank
-  replace: 'Hi {{name}},
-
+  replace: |
+    Hi {{name}},
 
     Thank you for {{reason}}. I really appreciate {{specific_appreciation}}.
 
-
     {{additional_message}}
 
-
     Best regards,
-
     {{your_name}}
-
-    '
 - trigger: :ack
   replace: Thanks for letting me know. I'll take a look and get back to you shortly.
 - trigger: :schedule
   replace: I've added this to my calendar. Looking forward to it!
 - trigger: :needinfo
-  replace: Could you please provide more details about {{specific_info}}? This will
-    help me better assist you.
+  replace: Could you please provide more details about {{specific_info}}? This will help me better assist you.
 - trigger: :meetingnotes
-  replace: '# Meeting Notes - {{date}}
-
+  replace: |
+    # Meeting Notes - {{date}}
 
     **Attendees:** {{attendees}}
-
     **Date:** {{date}}
-
     **Duration:** {{duration}}
 
-
     ## Agenda
-
     {{agenda}}
 
-
     ## Discussion
-
     {{discussion}}
 
-
     ## Action Items
-
     - [ ] {{action1}}
-
     - [ ] {{action2}}
 
-
     ## Next Meeting
-
     **Date:** {{next_date}}
-
     **Focus:** {{next_focus}}
-
-    '
 - trigger: :btw
   replace: by the way
 - trigger: :fyi
