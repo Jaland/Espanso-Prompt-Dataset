@@ -1,0 +1,40 @@
+matches:
+  # Python function template
+  - trigger: ":pydef"
+    replace: |
+      def {{name}}({{args}}):
+          """{{description}}"""
+          {{body}}
+          return {{return_value}}
+
+  # JavaScript function template
+  - trigger: ":jsfunction"
+    replace: |
+      function {{name}}({{args}}) {
+          // {{description}}
+          {{body}}
+          return {{return_value}};
+      }
+
+  # Git commit message templates
+  - trigger: ":gitfix"
+    replace: "fix: {{description}}"
+
+  - trigger: ":gitfeat"
+    replace: "feat: {{description}}"
+
+  - trigger: ":gitdocs"
+    replace: "docs: {{description}}"
+
+  # Common coding snippets
+  - trigger: ":tryexcept"
+    replace: |
+      try:
+          {{code}}
+      except {{exception}} as e:
+          {{error_handling}}
+
+  - trigger: ":ifmain"
+    replace: |
+      if __name__ == "__main__":
+          {{main_code}}

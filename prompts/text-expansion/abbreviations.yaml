@@ -1,0 +1,69 @@
+matches:
+  # Common abbreviations
+  - trigger: ":btw"
+    replace: "by the way"
+
+  - trigger: ":fyi"
+    replace: "for your information"
+
+  - trigger: ":imo"
+    replace: "in my opinion"
+
+  - trigger: ":imho"
+    replace: "in my humble opinion"
+
+  - trigger: ":asap"
+    replace: "as soon as possible"
+
+  - trigger: ":eod"
+    replace: "end of day"
+
+  - trigger: ":eta"
+    replace: "estimated time of arrival"
+
+  - trigger: ":tbd"
+    replace: "to be determined"
+
+  - trigger: ":tbc"
+    replace: "to be confirmed"
+
+  - trigger: ":wfh"
+    replace: "work from home"
+
+  # Technical abbreviations
+  - trigger: ":api"
+    replace: "Application Programming Interface"
+
+  - trigger: ":url"
+    replace: "Uniform Resource Locator"
+
+  - trigger: ":sql"
+    replace: "Structured Query Language"
+
+  - trigger: ":css"
+    replace: "Cascading Style Sheets"
+
+  - trigger: ":html"
+    replace: "HyperText Markup Language"
+
+  - trigger: ":json"
+    replace: "JavaScript Object Notation"
+
+  - trigger: ":xml"
+    replace: "eXtensible Markup Language"
+
+  # Quick fixes for common typos
+  - trigger: "teh"
+    replace: "the"
+
+  - trigger: "adn"
+    replace: "and"
+
+  - trigger: "taht"
+    replace: "that"
+
+  - trigger: "wich"
+    replace: "which"
+
+  - trigger: "recieve"
+    replace: "receive"

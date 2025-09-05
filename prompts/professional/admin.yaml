@@ -1,0 +1,23 @@
+matches:
+  # Meeting notes template
+  - trigger: ":meetingnotes"
+    replace: |
+      # Meeting Notes - {{date}}
+      
+      **Attendees:** {{attendees}}
+      **Date:** {{date}}
+      **Duration:** {{duration}}
+      
+      ## Agenda
+      {{agenda}}
+      
+      ## Discussion
+      {{discussion}}
+      
+      ## Action Items
+      - [ ] {{action1}}
+      - [ ] {{action2}}
+      
+      ## Next Meeting
+      **Date:** {{next_date}}
+      **Focus:** {{next_focus}}

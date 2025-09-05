@@ -1,0 +1,77 @@
+name: Generate Main Config
+
+on:
+  push:
+    branches: [ main ]
+    paths: 
+      - 'prompts/**/*.yaml'
+      - 'prompts/**/*.yml'
+      - 'scripts/generate_main_config.py'
+  pull_request:
+    branches: [ main ]
+    paths: 
+      - 'prompts/**/*.yaml'
+      - 'prompts/**/*.yml'
+      - 'scripts/generate_main_config.py'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  generate-config:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install PyYAML
+        
+    - name: Make script executable
+      run: chmod +x scripts/generate_main_config.py
+      
+    - name: Generate main configuration file
+      run: python scripts/generate_main_config.py
+      
+    - name: Check if main-base.yaml changed
+      id: check-changes
+      run: |
+        if git diff --quiet main-base.yaml; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Commit and push changes
+      if: steps.check-changes.outputs.changed == 'true' && github.event_name == 'push'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add main-base.yaml
+        git commit -m "Auto-update main-base.yaml from prompt changes"
+        git push
+        
+    - name: Upload main-base.yaml as artifact
+      if: github.event_name == 'pull_request'
+      uses: actions/upload-artifact@v3
+      with:
+        name: main-base-yaml
+        path: main-base.yaml
+        
+    - name: Comment on PR with changes
+      if: github.event_name == 'pull_request' && steps.check-changes.outputs.changed == 'true'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: '🤖 The main-base.yaml file will be updated when this PR is merged. You can download the generated file from the workflow artifacts.'
+          })

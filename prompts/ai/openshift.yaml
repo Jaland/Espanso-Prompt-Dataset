@@ -1,0 +1,13 @@
+matches:
+  - trigger: ":ai-rhocp"
+    replace: |
+
+    # Red Hat Openshift Question
+    * **Goal:** [Help me understand these logs]
+    * **Version:** e.g., OCP 4.14 on AWS IPI.
+    * **Problem:** What's happening vs. what you expect? Include any error messages.
+    * **Base Domain:** [apps.rosa.jland.guid.ab.openshiftapps.com]
+
+    ```yaml
+    # Paste relevant YAML here
+    ```
