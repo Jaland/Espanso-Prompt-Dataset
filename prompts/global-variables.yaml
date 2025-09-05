@@ -1,0 +1,79 @@
+# Global variables used across multiple prompt files
+# These will be automatically included in the main-base.yaml
+
+global_vars:
+  - name: myname
+    type: echo
+    params:
+      echo: "Jamie Land"
+
+  - name: myshortname  
+    type: echo
+    params:
+      echo: "Jamie"
+
+  - name: myemail
+    type: echo
+    params:
+      echo: "hokie10@gmail.com"
+
+
+  - name: today
+    type: date
+    params:
+      format: "%Y-%m-%d"
+
+  - name: now
+    type: date
+    params:
+      format: "%H:%M"
+
+  - name: datetime
+    type: date
+    params:
+      format: "%Y-%m-%d %H:%M"
+
+  - name: currentyear
+    type: date
+    params:
+      format: "%Y"
+
+# Common matches that use global variables
+matches:
+  # Quick access to personal info
+  - trigger: ":myname"
+    replace: "{{myname}}"
+
+  - trigger: ":myshortname"
+    replace: "{{myshortname}}"
+
+  - trigger: ":myemail"
+    replace: "{{myemail}}"
+
+
+  # Date and time shortcuts
+  - trigger: ":today"
+    replace: "{{today}}"
+
+  - trigger: ":now"
+    replace: "{{now}}"
+
+  - trigger: ":datetime"
+    replace: "{{datetime}}"
+
+  # Common phrases with your name
+  - trigger: ":regards"
+    replace: |
+      Best regards,
+      {{myname}}
+
+  - trigger: ":sincerely"
+    replace: |
+      Sincerely yours,
+      {{myname}}
+
+  # Email signature
+  - trigger: ":signature"
+    replace: |
+      {{myname}}
+      {{myemail}}

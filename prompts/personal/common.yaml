@@ -1,36 +1,4 @@
 matches:
-
-  # Date and time shortcuts
-  - trigger: ":today"
-    replace: "{{mydate}}"
-    vars:
-      - name: mydate
-        type: date
-        params:
-          format: "%Y-%m-%d"
-
-  - trigger: ":now"
-    replace: "{{mytime}}"
-    vars:
-      - name: mytime
-        type: date
-        params:
-          format: "%H:%M"
-
-  - trigger: ":datetime"
-    replace: "{{mydatetime}}"
-    vars:
-      - name: mydatetime
-        type: date
-        params:
-          format: "%Y-%m-%d %H:%M"
-
-  # Common phrases
+  # Common phrases (non-personal)
   - trigger: ":thanks"
     replace: "Thank you for your time and consideration."
-
-  - trigger: ":regards"
-    replace: "Best regards,"
-
-  - trigger: ":sincerely"
-    replace: "Sincerely yours,"

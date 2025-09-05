@@ -2,38 +2,38 @@ matches:
   # Email templates
   - trigger: ":emailmeet"
     replace: |
-      Hi {{name}},
+      Hi [name],
 
-      I hope this email finds you well. I'd like to schedule a meeting to discuss {{topic}}.
+      I hope this email finds you well. I'd like to schedule a meeting to discuss [topic].
 
-      Would you be available for a {{duration}} meeting sometime {{timeframe}}? Please let me know what works best for your schedule.
+      Would you be available for a [duration] meeting sometime [timeframe]? Please let me know what works best for your schedule.
 
       Best regards,
-      {{your_name}}
+      {{myname}}
 
   - trigger: ":emailfollow"
     replace: |
-      Hi {{name}},
+      Hi [name],
 
-      I wanted to follow up on our previous conversation about {{topic}}.
+      I wanted to follow up on our previous conversation about [topic].
 
-      {{follow_up_details}}
+      [follow_up_details]
 
       Please let me know if you have any questions or if there's anything else I can help with.
 
       Best regards,
-      {{your_name}}
+      {{myname}}
 
   - trigger: ":emailthank"
     replace: |
-      Hi {{name}},
+      Hi [name],
 
-      Thank you for {{reason}}. I really appreciate {{specific_appreciation}}.
+      Thank you for [reason]. I really appreciate [specific_appreciation].
 
-      {{additional_message}}
+      [additional_message]
 
       Best regards,
-      {{your_name}}
+      {{myname}}
 
   # Quick responses
   - trigger: ":ack"
@@ -43,4 +43,4 @@ matches:
     replace: "I've added this to my calendar. Looking forward to it!"
 
   - trigger: ":needinfo"
-    replace: "Could you please provide more details about {{specific_info}}? This will help me better assist you."
+    replace: "Could you please provide more details about [specific_info]? This will help me better assist you."

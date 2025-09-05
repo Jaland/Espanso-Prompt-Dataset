@@ -2,22 +2,22 @@ matches:
   # Meeting notes template
   - trigger: ":meetingnotes"
     replace: |
-      # Meeting Notes - {{date}}
+      # Meeting Notes - {{today}}
       
-      **Attendees:** {{attendees}}
-      **Date:** {{date}}
-      **Duration:** {{duration}}
+      **Attendees:** [attendees]
+      **Date:** {{today}}
+      **Duration:** [duration]
       
       ## Agenda
-      {{agenda}}
+      [agenda]
       
       ## Discussion
-      {{discussion}}
+      [discussion]
       
       ## Action Items
-      - [ ] {{action1}}
-      - [ ] {{action2}}
+      - [ ] [action1]
+      - [ ] [action2]
       
       ## Next Meeting
-      **Date:** {{next_date}}
-      **Focus:** {{next_focus}}
+      **Date:** [next_date]
+      **Focus:** [next_focus]
