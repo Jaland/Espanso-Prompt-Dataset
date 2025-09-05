@@ -181,3 +181,5 @@ matches:
   replace: which
 - trigger: recieve
   replace: receive
+- trigger: gti
+  replace: git
