@@ -10,6 +10,17 @@ from pathlib import Path
 import sys
 
 
+def multiline_string_representer(dumper, data):
+    """Custom YAML representer for multiline strings."""
+    if '\n' in data:
+        return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
+    return dumper.represent_scalar('tag:yaml.org,2002:str', data)
+
+
+# Register the custom representer
+yaml.add_representer(str, multiline_string_representer)
+
+
 def load_yaml_file(file_path):
     """Load a YAML file and return its content."""
     try:
@@ -76,8 +87,12 @@ def generate_main_config(prompts_dir, output_file):
                 file.write(f"{line}\n")
             file.write("\n")
             
-            # Write the YAML content
-            yaml.dump(main_config, file, default_flow_style=False, sort_keys=False, allow_unicode=True)
+            # Write the YAML content with better formatting for multiline strings
+            yaml.dump(main_config, file, 
+                     default_flow_style=False, 
+                     sort_keys=False, 
+                     allow_unicode=True,
+                     width=1000)  # Prevent line wrapping
         
         print(f"Successfully generated {output_file} with {len(main_config['matches'])} prompts")
         return True
