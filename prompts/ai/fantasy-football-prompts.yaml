@@ -26,7 +26,9 @@ matches:
     replace: |
       This image is for a wide website banner, so it must be in a panoramic 3:1 aspect ratio.
 
-      Subject: [Describe Subject Here]
+      Main Subject: [Describe Subject Here]
+
+      Secondary Subject: [Describe Subject Here]
 
       Main Text: [Any Text Here]
 
