@@ -26,10 +26,8 @@ matches:
     replace: |
       This image is for a wide website banner, so it must be in a panoramic 3:1 aspect ratio.
 
-      Please include the following text clearly and legibly on the [left/right] side of the image, using a [Describe font style, e.g., "bold and modern"] font:
+      Subject: [Describe Subject Here]
 
-      Headline: [Your main, attention-grabbing text]
-
-      Call to Action: [e.g., "Shop Now," "Learn More"]
+      Main Text: [Any Text Here]
 
       The final image should be vibrant, high-resolution, and visually appealing.
