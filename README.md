@@ -85,7 +85,7 @@ python scripts/generate_main_config.py
 
 1. **Copy the generated file**: Take the `main-base.yaml` file and copy it to your Espanso configuration directory
 2. **Espanso config location**:
-   - Linux: `~/.config/espanso/match/`
+   - Linux: `~/.config/espanso/config/default.yml`
    - macOS: `~/Library/Application Support/espanso/match/`
    - Windows: `%APPDATA%\espanso\match\`
 
