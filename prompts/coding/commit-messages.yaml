@@ -1,0 +1,29 @@
+matches:
+  # Core Conventional Commit Types
+  
+  # Fix commits - patches a bug (PATCH in SemVer)
+  - trigger: ":commit-fix"
+    replace: "fix: $|$"
+
+  # Feature commits - introduces new feature (MINOR in SemVer)
+  - trigger: ":commit-feat"
+    replace: "feat: $|$"
+
+  # Breaking changes - API breaking change (MAJOR in SemVer)
+  - trigger: ":commit-bc"
+    replace: |
+      feat!: $|$
+
+      BREAKING CHANGE: 
+
+  # Documentation changes
+  - trigger: ":commit-docs"
+    replace: "docs: $|$"
+
+  # Code refactoring (no functionality change)
+  - trigger: ":commit-refactor"
+    replace: "refactor: $|$"
+
+  # Other maintenance tasks
+  - trigger: ":commit-chore"
+    replace: "chore: $|$"

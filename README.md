@@ -2,6 +2,10 @@
 
 A well-organized repository for managing [Espanso](https://espanso.org/) text expansion prompts with automatic configuration generation.
 
+## 📖 [Complete Matches Reference →](MATCHES.md)
+
+View all 54 available triggers and their outputs organized by category.
+
 ## 📁 Repository Structure
 
 ```
