@@ -19,3 +19,71 @@ matches:
       > **4. Local & Personal Updates (Add to End):**
       > * **VT Football:** Perform a Google search. Is it Virginia Tech football season? If so, when is their next game (date, time, opponent)?
       > * **Richmond Weekend:** Perform a Google search for "weekend events in Richmond VA" and list 2-3 upcoming events, prioritizing family-friendly options.
+
+
+  - trigger: ":ai-rh-summary-db"
+    replace: |
+      "Generate a 'Summary Daily Briefing' for me, Jamie Land. Focus *only* on the following high-priority items:
+
+      1.  **My Calendar (Jamie Land):** List all events, meetings, and all-day items from 'Jamie Land's' primary Google Calendar for today.
+      2.  **US Holidays:** Note any official US holidays today.
+      3.  **Priority Emails:** Scan my inbox for the last 24 hours and report on:
+          * **Direct-to-Me:** Emails sent directly from a person to my inbox (not part of a mailing list).
+          * **Leadership Actions:** Emails from leadership that contain a specific due date or a task I need to complete."
+
+
+  - trigger: ":ai-rh-detailed-db"
+    replace: |
+      "Generate a 'Detailed Daily Briefing' for me, Jamie Land. Structure the briefing into the following sections, highlighting important items as specified.
+
+      ---
+
+      ### **Section 1: Priority Rundown (Most Important)**
+
+      * **My Calendar (Jamie Land):**
+          * List all events, meetings, and all-day items from 'Jamie Land's' primary Google Calendar for today.
+      * **US Holidays:**
+          * Note any official US holidays today.
+      * **Priority Emails:**
+          * **Direct-to-Me:** Summarize emails sent directly from a person to my inbox in the last 24 hours (excluding calendar invites).
+          * **Leadership Actions:** Identify and list all emails from leadership that contain a specific due date or a task I must complete. Include the sender, subject, and the required action/due date.
+
+      ---
+
+      ### **Section 2: Secondary Information (Less Important)**
+
+      * **Other Calendars:**
+          * Briefly list any events from my *other* subscribed Google Calendars (e.g., team calendars, resource calendars).
+      * **Email Overview (Last 24 Hours):**
+          * **Leadership Announcements:** Summarize any general announcements from leadership (those *without* a specific action item for me).
+          * **GitHub PRs:** List any new GitHub PR notification emails.
+          * **'Update' Tab Tasks:** Summarize any items from my 'Update' tab that appear to be required tasks.
+          * **'tldr' Newsletter:** Pull one or two headlines/summaries from the 'tldr' newsletter that align with my interests.
+      * **Note:** You must *exclude* all emails from the 'Promotion' and 'Social' tabs, and *exclude* any email that is just a calendar invite acceptance/decline.
+
+      ---
+
+      ### **Section 3: Tech & Market News (Short & Scannable)**
+
+      * Generate a short, one-sentence summary for each topic below.
+      * Provide one link for the main info and a second "deep dive" link (a Gemini search query) for more details.
+
+      * **IBM Stock Price:**
+          * [Current Price and day's change] - [Link to Google Finance] - [Gemini Deep Dive]
+      * **Major Kubernetes Releases:**
+          * [1-sentence summary of the latest K8s release announcement] - [Link to Announcement] - [Gemini Deep Dive]
+      * **Major AI Releases:**
+          * [1-sentence summary of the latest major AI release, e.g., new models or platforms] - [Link to Announcement] - [Gemini Deep Dive]
+      * **Major Red Hat Releases:**
+          * [1-sentence summary of the latest RHEL or OpenShift announcement] - [Link to Announcement] - [Gemini Deep Dive]"
+
+      ### **Section 4: Task List**
+
+      "Take the full output of the 'Detailed Daily Briefing' and parse it. Extract *only* the actionable items and format them as a simple, exportable task list.
+
+      Each task should include:
+      1.  The task itself (e.g., 'Review Q4 budget proposal').
+      2.  The source (e.g., 'Email from [Sender]' or 'Calendar: [Meeting Name]').
+      3.  The due date, if specified (e.g., 'Due: EOD Friday').
+
+      Do not include any summaries, news, or general announcements. The list should be formatted cleanly so I can copy-paste it into a task manager."
