@@ -1,0 +1,21 @@
+matches:
+  - trigger: ":ai-personal-db"
+    replace: |
+      > **Subject: Daily Briefing for Today, [Insert Date]**
+      >
+      > Please generate my daily briefing with the following structure:
+      >
+      > **1. Today's Calendar:**
+      > * List all calendar events for today.
+      >
+      > **2. Priority Email Summary:**
+      > * **Top Priority:** Scan my unread emails for *anything* from **Myrka Lembo**. Display a summary of each.
+      > * **Second Priority:** Summarize other unread emails from known personal contacts (separating them from automated newsletters, promotions, and notifications).
+      >
+      > **3. Actionable Date Finder:**
+      > * Scan my recent emails (last 7 days) to find any mentions of upcoming dates, deadlines, or events (e.g., "Let's meet on Thursday," "visit on the 10th," "deadline is Friday").
+      > * For each item found, list the commitment and provide an option/link to **create a calendar invite** for it.
+      >
+      > **4. Local & Personal Updates (Add to End):**
+      > * **VT Football:** Perform a Google search. Is it Virginia Tech football season? If so, when is their next game (date, time, opponent)?
+      > * **Richmond Weekend:** Perform a Google search for "weekend events in Richmond VA" and list 2-3 upcoming events, prioritizing family-friendly options.
