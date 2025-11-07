@@ -89,7 +89,7 @@ matches:
 
       ### **Section 4: Task List**
 
-      "Take the full output of the 'Detailed Daily Briefing' and parse it. Extract *only* the actionable items and format them as a simple, exportable task list.
+      "Take the full output of the 'Detailed Daily Briefing' and parse it. Extract *only* the actionable items and format them as a simple, exportable task list (don't include calendar invites).
 
       Each task should include:
       1.  The task itself (e.g., 'Review Q4 budget proposal').
