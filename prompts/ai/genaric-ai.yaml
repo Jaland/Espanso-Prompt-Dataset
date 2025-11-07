@@ -5,18 +5,22 @@ matches:
       >
       > Please generate my daily briefing with the following structure:
       >
-      > **1. Today's Calendar:**
-      > * List all calendar events for today.
+      > **1. Calendar (Next 2 Weeks):**
+      > * List all calendar events for the next 2 weeks (14 days from today).
       >
       > **2. Priority Email Summary:**
       > * **Top Priority:** Scan my unread emails for *anything* from **Myrka Lembo**. Display a summary of each.
       > * **Second Priority:** Summarize other unread emails from known personal contacts (separating them from automated newsletters, promotions, and notifications).
       >
-      > **3. Actionable Date Finder:**
+      > **3. Myrka's Travel Schedule:**
+      > * Check Myrka's calendar for any travel events or trips scheduled up to a month and a half (45 days) from today.
+      > * List the dates and any details about her travel plans.
+      >
+      > **4. Actionable Date Finder:**
       > * Scan my recent emails (last 7 days) to find any mentions of upcoming dates, deadlines, or events (e.g., "Let's meet on Thursday," "visit on the 10th," "deadline is Friday").
       > * For each item found, list the commitment and provide an option/link to **create a calendar invite** for it.
       >
-      > **4. Local & Personal Updates (Add to End):**
+      > **5. Local & Personal Updates (Add to End):**
       > * **VT Football:** Perform a Google search. Is it Virginia Tech football season? If so, when is their next game (date, time, opponent)?
       > * **Richmond Weekend:** Perform a Google search for "weekend events in Richmond VA" and list 2-3 upcoming events, prioritizing family-friendly options.
 
@@ -25,9 +29,12 @@ matches:
     replace: |
       "Generate a 'Summary Daily Briefing' for me, Jamie Land. Focus *only* on the following high-priority items:
 
-      1.  **My Calendar (Jamie Land):** List all events, meetings, and all-day items from 'Jamie Land's' primary Google Calendar for today.
+      1.  **My Calendar (Jamie Land):** List all events, meetings, and all-day items from 'Jamie Land's' primary Google Calendar for today and tomorrow.
           * Break it up between events in which I am the primary participant and events in which I am included because I am party of a group.
-      2.  **US Holidays:** Note any official US holidays today.
+      2.  **US Holidays & PTO (Up to 1.5 Months Out):** 
+          * Note any official US holidays today.
+          * Check for any upcoming US holidays and PTO (Paid Time Off) scheduled in my calendar up to a month and a half (45 days) from today.
+          * List the dates and type (holiday or PTO) for each.
       3.  **Priority Emails:** Scan my inbox for the last 24 hours and report on:
           * **Direct-to-Me:** Emails sent directly from a person to my inbox (not part of a mailing list).
           * **Leadership Actions:** Emails from leadership that contain a specific due date or a task I need to complete."
@@ -43,8 +50,10 @@ matches:
 
       * **My Calendar (Jamie Land):**
           * List all events, meetings, and all-day items from 'Jamie Land's' primary Google Calendar for today.
-      * **US Holidays:**
+      * **US Holidays & PTO (Up to 1.5 Months Out):**
           * Note any official US holidays today.
+          * Check for any upcoming US holidays and PTO (Paid Time Off) scheduled in my calendar up to a month and a half (45 days) from today.
+          * List the dates and type (holiday or PTO) for each.
       * **Priority Emails:**
           * **Direct-to-Me:** Summarize emails sent directly from a person to my inbox in the last 24 hours (excluding calendar invites).
           * **Leadership Actions:** Identify and list all emails from leadership that contain a specific due date or a task I must complete. Include the sender, subject, and the required action/due date.
