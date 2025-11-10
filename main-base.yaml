@@ -81,10 +81,12 @@ matches:
     >
     > **1. Calendar (Next 2 Weeks):**
     > * List all calendar events for the next 2 weeks (14 days from today).
+    > * **If today is Monday or Tuesday:** Also include any calendar events from the past weekend (Saturday and Sunday).
     >
     > **2. Priority Email Summary:**
     > * **Top Priority:** Scan my unread emails for *anything* from **Myrka Lembo**. Display a summary of each.
     > * **Second Priority:** Summarize other unread emails from known personal contacts (separating them from automated newsletters, promotions, and notifications).
+    > * **If today is Monday or Tuesday:** Also scan and summarize emails from the weekend (Saturday and Sunday), prioritizing emails from **Myrka Lembo** and other known personal contacts.
     >
     > **3. Myrka's Travel Schedule:**
     > * Check Myrka's calendar for any travel events or trips scheduled up to a month and a half (45 days) from today.
@@ -98,8 +100,8 @@ matches:
     > * **VT Football:** Perform a Google search. Is it Virginia Tech football season? If so, when is their next game (date, time, opponent)?
     > * **Richmond Weekend:** Perform a Google search for "weekend events in Richmond VA" and list 2-3 upcoming events, prioritizing family-friendly options.
 - trigger: :ai-rh-summary-db
-  replace: "\"Generate a 'Summary Daily Briefing' for me, Jamie Land. Focus *only* on the following high-priority items:\n\n1.  **My Calendar (Jamie Land):** List all events, meetings, and all-day items from 'Jamie Land's' primary Google Calendar for today and tomorrow.\n    * Break it up between events in which I am the primary participant and events in which I am included because I am party of a group.\n2.  **US Holidays & PTO (Up to 1.5 Months Out):** \n    * Note any official US holidays today.\n    * Check for any upcoming US holidays and PTO (Paid Time Off) scheduled in my calendar up to a month and a half (45 days) from today.\n    * List the dates and type (holiday or PTO) for each.\n3.  **Priority Emails:** Scan my inbox for the last 24 hours and report on:\n    * **Direct-to-Me:** Emails sent directly from a person to my inbox (not part of a mailing list).\n    * **Leadership Actions:** Emails from leadership that contain a specific due date or a task I need to complete.\"\n4.\
-    \ **TLDR:** If anything(s) seems of extreme importance, please summarize it in a single sentence and provide a link to the source.\n"
+  replace: "\"Generate a 'Summary Daily Briefing' for me, Jamie Land. Focus *only* on the following high-priority items:\n\n1.  **My Calendar (Jamie Land):** List all events, meetings, and all-day items from 'Jamie Land's' primary Google Calendar for today and tomorrow.\n    * Break it up between events in which I am the primary participant and events in which I am included because I am party of a group.\n    * **If today is Monday or Tuesday:** Also include any calendar events from the past weekend (Saturday and Sunday).\n2.  **US Holidays & PTO (Up to 1.5 Months Out):** \n    * Note any official US holidays today.\n    * Check for any upcoming US holidays and PTO (Paid Time Off) scheduled in my calendar up to a month and a half (45 days) from today.\n    * List the dates and type (holiday or PTO) for each.\n3.  **Priority Emails:** Scan my inbox for the last 24 hours and report on:\n    * **Direct-to-Me:** Emails sent directly from a person to my inbox (not part of a mailing list).\n \
+    \   * **Leadership Actions:** Emails from leadership that contain a specific due date or a task I need to complete.\n    * **If today is Monday or Tuesday:** Also scan emails from the weekend (Saturday and Sunday) and include any Direct-to-Me emails or Leadership Actions from that period.\"\n4. **TLDR:** If anything(s) seems of extreme importance, please summarize it in a single sentence and provide a link to the source.\n"
 - trigger: :ai-rh-detailed-db
   replace: |-
     "Generate a 'Detailed Daily Briefing' for me, Jamie Land. Structure the briefing into the following sections, highlighting important items as specified.
@@ -110,6 +112,7 @@ matches:
 
     * **My Calendar (Jamie Land):**
         * List all events, meetings, and all-day items from 'Jamie Land's' primary Google Calendar for today.
+        * **If today is Monday or Tuesday:** Also include any calendar events from the past weekend (Saturday and Sunday).
     * **US Holidays & PTO (Up to 1.5 Months Out):**
         * Note any official US holidays today.
         * Check for any upcoming US holidays and PTO (Paid Time Off) scheduled in my calendar up to a month and a half (45 days) from today.
@@ -117,6 +120,7 @@ matches:
     * **Priority Emails:**
         * **Direct-to-Me:** Summarize emails sent directly from a person to my inbox in the last 24 hours (excluding calendar invites).
         * **Leadership Actions:** Identify and list all emails from leadership that contain a specific due date or a task I must complete. Include the sender, subject, and the required action/due date.
+        * **If today is Monday or Tuesday:** Also scan emails from the weekend (Saturday and Sunday) and include any Direct-to-Me emails or Leadership Actions from that period.
 
     ---
 
@@ -129,6 +133,7 @@ matches:
         * **GitHub PRs:** List any new GitHub PR notification emails.
         * **'Update' Tab Tasks:** Summarize any items from my 'Update' tab that appear to be required tasks.
         * **'tldr' Newsletter:** Pull one or two headlines/summaries from the 'tldr' newsletter that align with my interests.
+        * **If today is Monday or Tuesday:** Also include emails from the weekend (Saturday and Sunday) in this overview section.
     * **Note:** You must *exclude* all emails from the 'Promotion' and 'Social' tabs, and *exclude* any email that is just a calendar invite acceptance/decline.
 
     ---
