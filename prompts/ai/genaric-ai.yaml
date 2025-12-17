@@ -42,7 +42,13 @@ matches:
           * **Direct-to-Me:** Emails sent directly from a person to my inbox (not part of a mailing list).
           * **Leadership Actions:** Emails from leadership that contain a specific due date or a task I need to complete.
           * **If today is Monday or Tuesday:** Also scan emails from the weekend (Saturday and Sunday) and include any Direct-to-Me emails or Leadership Actions from that period."
-      4. **TLDR:** If anything(s) seems of extreme importance, please summarize it in a single sentence and provide a link to the source.
+      4.  **Forums Tab - Major Announcements:** Check the Gmail 'Forums' tab for any major Red Hat or IBM announcements in the last 24 hours, such as:
+          * Company acquisitions or mergers
+          * Major organizational changes or restructuring
+          * Significant product announcements or launches
+          * Executive leadership changes
+          * **If today is Monday or Tuesday:** Also scan the Forums tab from the weekend (Saturday and Sunday) for any major announcements.
+      5. **TLDR:** If anything(s) seems of extreme importance, please summarize it in a single sentence and provide a link to the source.
 
   - trigger: ":ai-rh-detailed-db"
     replace: |
@@ -63,6 +69,13 @@ matches:
           * **Direct-to-Me:** Summarize emails sent directly from a person to my inbox in the last 24 hours (excluding calendar invites).
           * **Leadership Actions:** Identify and list all emails from leadership that contain a specific due date or a task I must complete. Include the sender, subject, and the required action/due date.
           * **If today is Monday or Tuesday:** Also scan emails from the weekend (Saturday and Sunday) and include any Direct-to-Me emails or Leadership Actions from that period.
+      * **Forums Tab - Major Announcements:**
+          * Check the Gmail 'Forums' tab for any major Red Hat or IBM announcements in the last 24 hours, such as:
+              * Company acquisitions or mergers
+              * Major organizational changes or restructuring
+              * Significant product announcements or launches
+              * Executive leadership changes
+          * **If today is Monday or Tuesday:** Also scan the Forums tab from the weekend (Saturday and Sunday) for any major announcements.
 
       ---
 
