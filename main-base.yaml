@@ -79,24 +79,30 @@ matches:
     >
     > Please generate my daily briefing with the following structure:
     >
-    > **1. Calendar (Next 2 Weeks):**
+    > **1. VA ABC Lottery Check:**
+    > * Check [INSERT WEBSITE URL] for any active lottery releases.
+    > * **PRIORITY ALERT:** If there is anything from **Peerless** available, highlight this prominently at the very top of the briefing.
+    > * Note if there are any **mezcal** or **bourbon** items available in the lottery.
+    > * Include the lottery name, dates, and a link to the lottery page.
+    >
+    > **2. Calendar (Next 2 Weeks):**
     > * List all calendar events for the next 2 weeks (14 days from today).
     > * **If today is Monday or Tuesday:** Also include any calendar events from the past weekend (Saturday and Sunday).
     >
-    > **2. Priority Email Summary:**
+    > **3. Priority Email Summary:**
     > * **Top Priority:** Scan my unread emails for *anything* from **Myrka Lembo**. Display a summary of each.
     > * **Second Priority:** Summarize other unread emails from known personal contacts (separating them from automated newsletters, promotions, and notifications).
     > * **If today is Monday or Tuesday:** Also scan and summarize emails from the weekend (Saturday and Sunday), prioritizing emails from **Myrka Lembo** and other known personal contacts.
     >
-    > **3. Myrka's Travel Schedule:**
+    > **4. Myrka's Travel Schedule:**
     > * Check Myrka's calendar for any travel events or trips scheduled up to a month and a half (45 days) from today.
     > * List the dates and any details about her travel plans.
     >
-    > **4. Actionable Date Finder:**
+    > **5. Actionable Date Finder:**
     > * Scan my recent emails (last 7 days) to find any mentions of upcoming dates, deadlines, or events (e.g., "Let's meet on Thursday," "visit on the 10th," "deadline is Friday").
     > * For each item found, list the commitment and provide an option/link to **create a calendar invite** for it.
     >
-    > **5. Local & Personal Updates (Add to End):**
+    > **6. Local & Personal Updates (Add to End):**
     > * **VT Football:** Perform a Google search. Is it Virginia Tech football season? If so, when is their next game (date, time, opponent)?
     > * **Richmond Weekend:** Perform a Google search for "weekend events in Richmond VA" and list 2-3 upcoming events, prioritizing family-friendly options.
 - trigger: :ai-rh-summary-db
